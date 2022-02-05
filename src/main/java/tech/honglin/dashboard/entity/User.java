@@ -25,7 +25,7 @@ public class User implements Serializable {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @JsonFormat
+
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP ")
     private LocalDateTime created_at = LocalDateTime.now();
 
