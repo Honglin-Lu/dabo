@@ -1,6 +1,8 @@
 package tech.honglin.dashboard.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import tech.honglin.dashboard.entity.User;
 import tech.honglin.dashboard.repository.UserRepository;
@@ -14,8 +16,15 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping(value = "/users")
-    List<User> getAllUsers() {
-        return userRepository.findAll();
+    Page<User> getAllUsers(Pageable pageable) {
+//        return userRepository.findByEmail("bbb@bbb.com", pageable);
+//        return userRepository.findFirstByOrderByIdAsc();
+        return userRepository.queryFirst3ByName("ccc", pageable);
+    }
+
+    @GetMapping(value = "/users/count")
+    long getCount(Pageable pageable) {
+        return userRepository.countByName("ccc");
     }
 
     @GetMapping("/str")
