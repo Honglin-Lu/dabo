@@ -29,7 +29,7 @@ public class User implements Serializable {
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP ")
     private LocalDateTime created_at = LocalDateTime.now();
 
-    @JsonFormat
+
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP ")
     private LocalDateTime updated_at = LocalDateTime.now();
 

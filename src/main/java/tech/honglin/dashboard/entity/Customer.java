@@ -31,11 +31,11 @@ public class Customer {
     @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
-    @JsonFormat
+
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP ")
     private LocalDateTime created_at = LocalDateTime.now();
 
-    @JsonFormat
+
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP ")
     private LocalDateTime updated_at = LocalDateTime.now();
 
