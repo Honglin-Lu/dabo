@@ -8,6 +8,7 @@ public enum ResultStatus {
      */
     S100(100,"Operation is success."),
 
+    S401(401, "You do not have permission to access"),
     /**
      * 3xxx
      * Operation failed
