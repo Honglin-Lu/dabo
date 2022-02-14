@@ -15,18 +15,6 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(value = "/users")
-    Page<User> getAllUsers(Pageable pageable) {
-//        return userRepository.findByEmail("bbb@bbb.com", pageable);
-//        return userRepository.findFirstByOrderByIdAsc();
-
-        return userRepository.queryFirst3ByName("ccc", pageable);
-    }
-
-    @GetMapping(value = "/users/count")
-    long getCount(Pageable pageable) {
-        return userRepository.countByName("ccc");
-    }
 
     @GetMapping("/str")
     String getStr() {

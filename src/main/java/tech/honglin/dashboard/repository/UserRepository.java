@@ -1,23 +1,15 @@
 package tech.honglin.dashboard.repository;
 
-import org.aspectj.apache.bcel.util.Repository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import tech.honglin.dashboard.entity.User;
 
-import java.util.List;
+import java.util.Optional;
 
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    //Page<String> findName(Pageable pageable);
-    Long countByName(String name);
+    Optional<User> findByUsername(String name);
 
-    Page<User> findByEmail(String email, Pageable pageable);
+    Boolean existsByUsername(String username);
 
-    User findFirstByOrderByIdAsc();
-
-    Page<User> queryFirst3ByName(String name, Pageable pageable);
+    Boolean existsByEmail(String email);
 }
