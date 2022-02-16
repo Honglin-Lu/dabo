@@ -33,13 +33,21 @@ public class User implements Serializable {
     @Column(nullable = false, length = 100)
     private String email;
 
+    @Column(nullable = true, length = 100)
+    private String firstname;
+
+    @Column(nullable = true, length = 100)
+    private String lastname;
+
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, String firstname, String lastname) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     @ManyToMany
